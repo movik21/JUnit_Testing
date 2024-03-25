@@ -1,6 +1,8 @@
 package com.example.meinedemo.demo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
 
 public class ScoreKeeperTests {
 
@@ -10,4 +12,3 @@ public class ScoreKeeperTests {
         assertEquals("000:000", scoreKeeper.getScore());
     }
 }
-
