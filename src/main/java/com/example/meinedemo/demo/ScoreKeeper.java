@@ -1,11 +1,17 @@
 package com.example.meinedemo.demo;
 
 public class ScoreKeeper {
-    //TBD void scoreTeamA()
-    //TBD void scoreTeamB()
     
+    private int scoreTeamA;
+
+    public void scoreTeamA(int points) {
+        this.scoreTeamA += points;
+    }
+    
+    //TBD void scoreTeamB()
+
     public String getScore() {
-        return "000:000";
+        return String.format("%03d:000", scoreTeamA);
     }
     
 }
