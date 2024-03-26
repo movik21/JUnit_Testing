@@ -23,5 +23,12 @@ public class ScoreKeeperTests {
         scoreKeeper.scoreTeamB(1);
         assertEquals("000:001", scoreKeeper.getScore());
     }
+    @Test
+    public void test4() { // Max points per end
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        scoreKeeper.scoreTeamA(7); // Wrong input will be corrected automatically
+        scoreKeeper.scoreTeamB(2);
+        assertEquals("006:002", scoreKeeper.getScore()); 
+    }
 
 }
