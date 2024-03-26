@@ -6,11 +6,19 @@ public class ScoreKeeper {
     private int scoreTeamB = 0;
 
     public void scoreTeamA(int points) {
-        this.scoreTeamA += points;
+        if (points > 6) {
+            this.scoreTeamA += 6;
+        } else {
+            this.scoreTeamA += points;
+        }
     }
     
     public void scoreTeamB(int points) {
-        this.scoreTeamB += points;
+        if (points > 6) {
+            this.scoreTeamA += 6;
+        } else {
+            this.scoreTeamB += points;
+        }
     }
 
     public String getScore() {
