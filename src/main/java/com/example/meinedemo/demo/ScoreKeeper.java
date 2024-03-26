@@ -15,7 +15,7 @@ public class ScoreKeeper {
     
     public void scoreTeamB(int points) {
         if (points > 6) {
-            this.scoreTeamA += 6;
+            this.scoreTeamB += 6;
         } else {
             this.scoreTeamB += points;
         }
