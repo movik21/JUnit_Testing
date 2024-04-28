@@ -74,4 +74,18 @@ public class ScoreKeeperTests {
         scoreKeeper.scoreTeamB(2);
         assertEquals("060:060", scoreKeeper.getScore());
     }
+
+    @Test
+    public void test9() { // Additional round possible if scores are tied
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        for (int i = 0; i < 10; i++) {  // Simulate scoring for 10 ends
+            scoreKeeper.scoreTeamA(6);
+            scoreKeeper.scoreTeamB(6);
+            scoreKeeper.newEnd();
+        }
+        // Scores are tied, simulate an extra end
+        scoreKeeper.scoreTeamA(0);
+        scoreKeeper.scoreTeamB(1);
+        assertEquals("060:061", scoreKeeper.getScore());
+    }
 }
