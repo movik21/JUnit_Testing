@@ -1,6 +1,8 @@
 package com.example.meinedemo.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 
@@ -46,6 +48,16 @@ public class ScoreKeeperTests {
         scoreKeeper.scoreTeamB(2);
         scoreKeeper.resetScores();
         assertEquals("000:000", scoreKeeper.getScore());
+    }
+
+    @Test
+    public void test7() { // Test exeeding ends
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        for (int i = 0; i < 11; i++) {  // Trying to simulate 11 ends
+            scoreKeeper.scoreTeamA(6);
+            scoreKeeper.scoreTeamB(6);
+        }
+        assertTrue(scoreKeeper.getScore().startsWith("060:060"));  // Points do not reset after 10 ends and continue accumulating
     }
 
 }
