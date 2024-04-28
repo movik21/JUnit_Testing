@@ -65,14 +65,14 @@ public class ScoreKeeperTests {
         ScoreKeeper scoreKeeper = new ScoreKeeper();
         for (int i = 0; i < 10; i++) {  // Simulate scoring for 10 ends
             scoreKeeper.scoreTeamA(6);
-            scoreKeeper.scoreTeamB(6);
+            scoreKeeper.scoreTeamB(5);
             scoreKeeper.newEnd();
 
         }
         // Try to add more points after 10 ends
         scoreKeeper.scoreTeamA(3);
         scoreKeeper.scoreTeamB(2);
-        assertEquals("060:060", scoreKeeper.getScore());
+        assertEquals("060:050", scoreKeeper.getScore());
     }
 
     @Test

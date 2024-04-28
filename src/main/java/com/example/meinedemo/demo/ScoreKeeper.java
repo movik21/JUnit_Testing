@@ -2,24 +2,22 @@ package com.example.meinedemo.demo;
 
 public class ScoreKeeper {
     
-    private int scoreTeamA = 0;
-    private int scoreTeamB = 0;
     private int totalScoreTeamA = 0;
     private int totalScoreTeamB = 0;
     private int endCount = 0;
 
     public void scoreTeamA(int points) {
-        if (endCount < 10) {
-            scoreTeamA = Math.min(6, points);
-            totalScoreTeamA += scoreTeamA;
+        if (endCount >= 10 && totalScoreTeamA != totalScoreTeamB) {
+            return;
         }
+        totalScoreTeamA += Math.min(6, points);
     }
     
     public void scoreTeamB(int points) {
-        if (endCount < 10) {
-            scoreTeamB = Math.min(6, points);
-            totalScoreTeamB += scoreTeamB;
+        if (endCount >= 10 && totalScoreTeamA != totalScoreTeamB) {
+            return;
         }
+        totalScoreTeamB += Math.min(6, points);
     }
 
     public String getScore() {
