@@ -17,4 +17,8 @@ public class ScoreKeeper {
         return String.format("%03d:%03d", scoreTeamA, scoreTeamB);
     }
     
+    public void resetScores() {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+    }
 }
