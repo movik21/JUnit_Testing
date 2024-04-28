@@ -88,4 +88,21 @@ public class ScoreKeeperTests {
         scoreKeeper.scoreTeamB(1);
         assertEquals("060:061", scoreKeeper.getScore());
     }
+
+    @Test
+    public void test10() { // Final round after maximal ends and resolve of tie
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        for (int i = 0; i < 10; i++) {  // Simulate scoring for 10 ends
+            scoreKeeper.scoreTeamA(6);
+            scoreKeeper.scoreTeamB(6);
+        }
+        // Extra end where team A wins
+        scoreKeeper.scoreTeamA(3);
+        scoreKeeper.scoreTeamB(0);
+        // Try to add more points after the game should have concluded
+        scoreKeeper.scoreTeamA(6);
+        scoreKeeper.scoreTeamB(4);
+        assertEquals("063:060", scoreKeeper.getScore());
+    }
+    
 }
