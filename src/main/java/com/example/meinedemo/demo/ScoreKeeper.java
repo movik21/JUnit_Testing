@@ -6,15 +6,20 @@ public class ScoreKeeper {
     private int scoreTeamB = 0;
     private int totalScoreTeamA = 0;
     private int totalScoreTeamB = 0;
+    private int endCount = 0;
 
     public void scoreTeamA(int points) {
-        scoreTeamA = Math.min(6, points);
-        totalScoreTeamA += scoreTeamA;
+        if (endCount < 10) {
+            scoreTeamA = Math.min(6, points);
+            totalScoreTeamA += scoreTeamA;
+        }
     }
     
     public void scoreTeamB(int points) {
-        scoreTeamB = Math.min(6, points);
-        totalScoreTeamB += scoreTeamB;
+        if (endCount < 10) {
+            scoreTeamB = Math.min(6, points);
+            totalScoreTeamB += scoreTeamB;
+        }
     }
 
     public String getScore() {
@@ -24,5 +29,10 @@ public class ScoreKeeper {
     public void resetScores() {
         totalScoreTeamA = 0;
         totalScoreTeamB = 0;
+        endCount = 0;
+    }
+
+    public void newEnd() {
+        endCount++;
     }
 }
