@@ -39,4 +39,13 @@ public class ScoreKeeperTests {
         assertEquals("003:006", scoreKeeper.getScore()); 
     }
 
+    @Test
+    public void test6() { // Reset scores
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        scoreKeeper.scoreTeamA(3);
+        scoreKeeper.scoreTeamB(2);
+        scoreKeeper.resetScores();
+        assertEquals("000:000", scoreKeeper.getScore());
+    }
+
 }
