@@ -60,4 +60,16 @@ public class ScoreKeeperTests {
         assertTrue(scoreKeeper.getScore().startsWith("060:060"));  
     }
 
+    @Test
+    public void test8() { // Exceeding max of 10 ends
+        ScoreKeeper scoreKeeper = new ScoreKeeper();
+        for (int i = 0; i < 10; i++) {  // Simulate scoring for 10 ends
+            scoreKeeper.scoreTeamA(6);
+            scoreKeeper.scoreTeamB(6);
+        }
+        // Try to add more points after 10 ends
+        scoreKeeper.scoreTeamA(3);
+        scoreKeeper.scoreTeamB(2);
+        assertEquals("060:060", scoreKeeper.getScore());
+    }
 }
