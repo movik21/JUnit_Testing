@@ -95,6 +95,7 @@ public class ScoreKeeperTests {
         for (int i = 0; i < 10; i++) {  // Simulate scoring for 10 ends
             scoreKeeper.scoreTeamA(6);
             scoreKeeper.scoreTeamB(6);
+            scoreKeeper.newEnd();
         }
         // Extra end where team A wins
         scoreKeeper.scoreTeamA(3);
